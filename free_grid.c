@@ -7,7 +7,7 @@
  *@grid: the created grid to be freed
  *@height: height of the grid
  *
- *Return: Void
+ *Return: Nothing
  */
 void free_grid(int **grid, int height)
 {
