@@ -1,13 +1,7 @@
 import React from "react";
 
-const name = "Rob";
-
-const displayMessage = () => {
-  return "Wow!"
-}
-
-const Hello = () => {
-  return <div>He is called {name}. Everytime he sees a new this he's like {displayMessage()}</div>;
+const Hello = (props) => {
+  return <div>Hello, {props.name}</div>;
 };
 
 export default Hello;
