@@ -1,10 +1,21 @@
+import ConditionalComponent from "./components/ConditionalComponent";
+import Fruits from "./components/Fruits";
 import Hello from "./components/Hello";
 
 function App() {
+  const person = {
+    name: "Rob",
+    message: "Good morning",
+    emoji: "👋",
+    seatNumbers: [1, 4, 7],
+  };
+
   return (
     <div className="App">
-      <Hello name= "Chemtai"/>
-      <Hello name= "Koech"/>
+      <h1>
+        <Hello person={person} />
+      </h1>
+      <Fruits />
     </div>
   );
 }
