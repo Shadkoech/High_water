@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import Form from "./Form";
+import TodoList from "./TodoList";
 
 const Todo = () => {
-    const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState([]);
+
   return (
     <div>
-      <form >
-        <input type="text" onChange={(e)=> setTodo(e.target.value)} value={todo} />
-        <button type='submit'>Add</button>
-      </form>
-
+      <Form todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} />
     </div>
-  )
-}
+  );
+};
 
-export default Todo
+export default Todo;
