@@ -2,18 +2,31 @@ import React from "react";
 import styles from "./todoitem.module.css";
 
 const TodoItem = ({ item, todos, setTodos }) => {
-
   function handleDelete(item) {
-    console.log("Delete button clicked for item", item)
-   setTodos(todos.filter((todo) => todo !== item)); 
+    console.log("Delete button clicked for item", item);
+    setTodos(todos.filter((todo) => todo !== item));
   }
 
+  function handleClick(name) {
+    const newArray = todos.map((todo) =>
+      todo.name === name ? { ...todo, done: !todo.done } : todo
+    );
+    setTodos(newArray)  
+
+  }
+
+  const crosscss = item.done ? styles.completed : ""
   return (
     <div className={styles.item}>
       <div className={styles.itemName}>
-        {item}
+        <span className= {crosscss} onClick={() => handleClick(item.name)}>{item.name}</span>
         <span>
-          <button onClick={() => handleDelete(item)} className={styles.deleteButton}>x</button>
+          <button
+            onClick={() => handleDelete(item)}
+            className={styles.deleteButton}
+          >
+            x
+          </button>
         </span>
       </div>
 

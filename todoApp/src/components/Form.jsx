@@ -3,12 +3,12 @@ import { useState } from "react";
 import styles from "./form.module.css";
 
 const Form = ({ todos, setTodos }) => {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState({ name:"", done: false });
 
   function handleSubmit(e) {
     e.preventDefault();
     setTodos([...todos, todo]);
-    setTodo("");
+    setTodo({ name:"", done: false });
   }
   return (
     <div>
@@ -17,8 +17,8 @@ const Form = ({ todos, setTodos }) => {
           <input
             className={styles.modernInput}
             type="text"
-            onChange={(e) => setTodo(e.target.value)}
-            value={todo}
+            onChange={(e) => setTodo({name:e.target.value, done: false })}
+            value={todo.name}
             placeholder="Enter todo item.."
           />
           <button className={styles.modernButton} type="submit">
