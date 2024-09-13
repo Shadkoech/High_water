@@ -12,8 +12,10 @@ A simple and intuitive Todo App built using React. The app allows users to add, 
 
 ### Prerequisites
 Before you begin, make sure you have the following installed:
-    - `Node.js` (v14+ recommended)
-    - `npm` or `yarn`
+
+-  `Node.js` (v14+ recommended)
+-  `npm` or `yarn`
+
 
 ### Installation and running
 * git clone https://github.com/Shadkoech/High_water.git
