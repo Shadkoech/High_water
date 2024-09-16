@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./fooditem.module.css";
 
-const FoodItem = ({ food }) => {
+const FoodItem = ({ food, setFoodId }) => {
   return (
     <div className={styles.itemContainer}>
       <img className={styles.itemImage} src={food.image} alt="" />
@@ -9,7 +9,15 @@ const FoodItem = ({ food }) => {
         <p className={styles.itemName}>{food.title}</p>
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.itemButton}>View Recipe</button>
+        <button
+          onClick={() => {
+            console.log(food.id);
+            setFoodId(food.id)
+          }}
+          className={styles.itemButton}
+        >
+          View Recipe
+        </button>
       </div>
     </div>
   );
